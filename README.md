@@ -13,19 +13,19 @@ In order to address these challenges, the paper introduces a new model called **
 
 The core block of the DiffiT model is the **DiffiT Transformer Block**, which is defined as follows:
 
-![diffit_block.png]()
+![diffit_block.jpg](images/diffit_block.jpg)
 
 At every layer, the DiffiT Transformer block receives a set of tokens {$\mathbf{x}_s$} arranged spatially on a 2D grid; it also receives $\mathbf{x}_t$, a time token representing the time step. The time token is obtained by feeding positional time embeddings to a small MLP with Swish activation function.
 
 At this point, the authors define their **Time-Dependent Multi-Head Self-Attention (TMSA)** layer, that captures both long-rande spatial and temporal dependencies by projecting feature and time token embeddings into a shared space. In particular, time dependent queries **q**, keys **k** and values **v** in the shared space are computed by a linear projection of spatial and time embeddings:
 
-![tmsa.png]()
+![tmsa.jpg](images/tmsa.jpg)
 
 As a result, queries, keys and values are all linear functions of both time and spatial tokens, and they can adaptively modify the behavior of the attention mechanism for different time steps.
 
 The Self-Attention is computed as follows:
 
-![self_attention.png]()
+![self_attention.jpg](images/self_attention.jpg)
 
 where **Q = $\mathbf{q}_s$**, **K = $\mathbf{k}_s$** and **V = $\mathbf{v}_s$** are a stacked form of queries, keys and values in rows of a matrix; **d** is a scaling factor for keys K, and **B** corresponds to a *relative position bias*, which allows for the encoding of the information across each attention head.
 
@@ -38,7 +38,7 @@ In particular, each resolution consists of L consecutive DiffiT blocks, containi
 
 In the Image Space DiffiT Architecture, a **DiffiT ResBlock** is also defined by combining the proposed DiffiT Transformer block with a convolutional layer, by means of a residual connection:
 
-![diffit_resblock.png]()
+![diffit_resblock.jpg](images/diffit_resblock.jpg)
 
 ---
 ## Latent Space DiffiT Architecture
