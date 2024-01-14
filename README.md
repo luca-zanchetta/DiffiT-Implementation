@@ -57,3 +57,9 @@ The initial configuration of both the notebooks is intended to run on Google Col
 The initial configuration is intended to run the training, the testing and the evaluation of the metrics phases. If you want to change this, you can modify accordingly the boolean variables IS_TRAIN, IS_TEST and/or IS_METRIC. Once these variables have been set, you can simply run all the cells of the notebook. Be aware of two things:
 * Run the notebook using the GPU;
 * The test phase and the evaluation metric phase require previously saved weights: therefore, be sure to have set IS_TRAIN=True or to have previosly saved weights in the path specified in the PATH_WEIGHTS variable.
+
+*Note*: If you want to test our models as described in the notebooks, or if you want to simply have pre-trained models as a starting point for further experiments, here are our best ones:
+* Latent Space: [link](https://drive.google.com/file/d/1i7zMGkwB2XN0D_7wkzAPEkTw9Xhr_fsl/view?usp=drive_link)
+* Image Space: [link](https://drive.google.com/file/d/1Iz5bXPs74OnOO0XBSgjNmu2fYUmKLeJf/view?usp=drive_link)
+
+The notebooks are intended to load weights from Google Drive; therefore, we suggest to download the weights from our links, to load them on your own drive (i.e. on the MyDrive folder) and to modify the DIR_WEIGHTS and PATH_WEIGHTS variables accordingly.
